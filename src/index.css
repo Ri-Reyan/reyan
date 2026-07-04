@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tertiary: #f8f8f8;
+  --color-secondary: #9ca3af;
+  --color-background: #222222;
+  --font-sans: "Inter Variable", sans-serif;
+}
+
+html,
+body #root {
+  width: 100%;
+  overflow-x: hidden;
+  cursor: none !important;
+  background-color: #222222;
+  color: white;
+}
+
+#root {
+  cursor: none !important;
+}
