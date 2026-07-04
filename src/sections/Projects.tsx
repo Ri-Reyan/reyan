@@ -2,52 +2,63 @@ import { projects } from "../assets/stack_assets/doc_assests";
 
 const Projects = () => {
   return (
-    <div className="mt-10">
-      <h1 className="text-4xl text-center font-semibold">Things I've Built</h1>
-      <div className="flex flex-col gap-y-4 mt-4">
+    <section className="mx-auto mt-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 className="mb-10 text-center text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
+        Things I've Built
+      </h1>
+
+      <div className="space-y-6">
         {projects.map((data) => (
           <div
-            className="bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-4 py-2 rounded-xl hover:border-[#FFFFFF]/40 transition-colors flex flex-col gap-y-2 place-content-center m-2"
             key={data.id}
+            className="rounded-2xl border border-white/10 bg-zinc-900/60 p-5 transition-all duration-300 hover:border-white/30"
           >
-            <h1 className="text-xl font-semibold">{data.title}</h1>
-            <p className="text-sm text-gray-400">{data.description}</p>
-            <div>
-              {data.techStack.map((elem) => (
-                <div className="inline-table space-x-2 space-y-2" key={elem}>
-                  <p
-                    className="bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-2 py-1 rounded-xl hover:border-[#FFFFFF]/40 transition-colors place-content-center text-sm"
-                    key={elem}
-                  >
-                    {elem}
-                  </p>
-                </div>
+            {/* Title */}
+            <h2 className="text-xl font-semibold text-white sm:text-2xl">
+              {data.title}
+            </h2>
+
+            {/* Description */}
+            <p className="mt-3 text-sm leading-7 text-secondary sm:text-base">
+              {data.description}
+            </p>
+
+            {/* Tech Stack */}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {data.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-white/10 bg-zinc-800 px-3 py-1 text-xs text-white transition-colors hover:border-white/40 sm:text-sm"
+                >
+                  {tech}
+                </span>
               ))}
-              <div className="mt-4 flex flex-row gap-x-4">
-                <button className="bg-white text-background p-3 text-lg font-semibold rounded-md hover:scale-105">
-                  <a
-                    href={`${data.github}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Github
-                  </a>
-                </button>
-                <button className="bg-blue-400 text-white p-3 text-lg font-semibold rounded-md hover:scale-105">
-                  <a
-                    href={`${data.link}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Preview
-                  </a>
-                </button>
-              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={data.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-white px-5 py-3 text-center font-semibold text-black transition-transform duration-300 hover:scale-105"
+              >
+                GitHub
+              </a>
+
+              <a
+                href={data.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-blue-500 px-5 py-3 text-center font-semibold text-white transition-transform duration-300 hover:scale-105"
+              >
+                Live Preview
+              </a>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

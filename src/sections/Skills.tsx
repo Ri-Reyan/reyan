@@ -6,120 +6,52 @@ import {
   systems,
 } from "../assets/stack_assets/doc_assests";
 
+const skillCategories = [
+  { title: "Programming Languages", data: languages },
+  { title: "Frontend Weapons", data: frontend },
+  { title: "Backend", data: backend },
+  { title: "Databases", data: database },
+  { title: "Systems, Security & Tools", data: systems },
+];
+
 const Skills = () => {
   return (
-    <div className="mt-10">
-      <h1 className="text-4xl text-center font-bold">Skills & Expertise</h1>
+    <section className="mx-auto mt-16 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 className="mb-12 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+        Skills & Expertise
+      </h1>
+
       <div className="space-y-12">
-        {/* Category 1: Programming language */}
-        <div className="mt-6 text-center">
-          <h3 className="text-lg md:text-xl font-semibold text-[#FFFFFF] mb-4">
-            Programming languages
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {languages.map((tech) => (
-              <div
-                className=" bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-4 py-2 rounded-xl hover:border-[#FFFFFF]/40 transition-colors flex flex-row gap-x-1.5 place-content-center"
-                key={tech.id}
-              >
-                {tech.link && (
-                  <img className="h-5 w-5" src={tech.link} alt={tech.name} />
-                )}
-                <span className="text-sm md:text-sm font-medium text-[#FFFFFF] hover:text-blue-400 hover:scale-105">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* Category 2: Frontend */}
-        <div>
-          <h3 className="text-lg md:text-xl text-center font-semibold text-[#FFFFFF] mb-4">
-            Frontend Weapons
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {frontend.map((tech) => (
-              <div
-                className=" bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-4 py-2 rounded-xl hover:border-[#FFFFFF]/40 transition-colors flex flex-row gap-x-1.5 place-content-center"
-                key={tech.id}
-              >
-                {tech.link && (
-                  <img className="h-5 w-5" src={tech.link} alt={tech.name} />
-                )}
-                <span className="text-sm md:text-sm font-medium text-[#FFFFFF] hover:text-blue-400 hover:scale-105">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        {skillCategories.map((category) => (
+          <div key={category.title}>
+            <h3 className="mb-6 text-center text-xl font-semibold text-white sm:text-2xl">
+              {category.title}
+            </h3>
 
-        {/* Category 3: Backend */}
-        <div>
-          <h3 className="text-lg md:text-xl text-center font-semibold text-[#FFFFFF] mb-4">
-            Backend
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {backend.map((tech) => (
-              <div
-                className=" bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-4 py-2 rounded-xl hover:border-[#FFFFFF]/40 transition-colors flex flex-row gap-x-1.5 place-content-center"
-                key={tech.id}
-              >
-                {tech.link && (
-                  <img className="h-5 w-5" src={tech.link} alt={tech.name} />
-                )}
-                <span className="text-sm md:text-sm font-medium text-[#FFFFFF] hover:text-blue-400 hover:scale-105">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* Category 4: Database */}
-        <div>
-          <h3 className="text-lg md:text-xl text-center font-semibold text-[#FFFFFF] mb-4">
-            Databases
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {database.map((tech) => (
-              <div
-                className=" bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-4 py-2 rounded-xl hover:border-[#FFFFFF]/40 transition-colors flex flex-row gap-x-1.5 place-content-center"
-                key={tech.id}
-              >
-                {tech.link && (
-                  <img className="h-5 w-5" src={tech.link} alt={tech.name} />
-                )}
-                <span className="text-sm md:text-sm font-medium text-[#FFFFFF] hover:text-blue-400 hover:scale-105">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {category.data.map((tech) => (
+                <div
+                  key={tech.id}
+                  className="group flex items-center gap-2 rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/30"
+                >
+                  {tech.link && (
+                    <img
+                      src={tech.link}
+                      alt={tech.name}
+                      className="h-5 w-5 object-contain sm:h-6 sm:w-6"
+                    />
+                  )}
 
-        {/* Category 5: Tools & Systems */}
-        <div>
-          <h3 className="text-lg md:text-xl font-semibold text-[#FFFFFF] mb-4">
-            Systems, Security & Tools
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {systems.map((tech) => (
-              <div
-                className=" bg-[#2A2A2A]/50 border border-[#7B7B7B]/20 px-4 py-2 rounded-xl hover:border-[#FFFFFF]/40 transition-colors flex flex-row gap-x-1.5 place-content-center"
-                key={tech.id}
-              >
-                {tech.link && (
-                  <img className="h-5 w-5" src={tech.link} alt={tech.name} />
-                )}
-                <span className="text-sm md:text-sm font-medium text-[#FFFFFF] hover:text-blue-400 hover:scale-105">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
+                  <span className="text-sm font-medium text-white transition-colors group-hover:text-blue-400 sm:text-base">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,76 +5,85 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useLenis } from "lenis/react";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Hero = () => {
   const lenis = useLenis();
 
   const wordRef = useRef<HTMLHeadingElement | null>(null);
-  const hero_imgRef = useRef<HTMLImageElement | null>(null);
+  const heroImgRef = useRef<HTMLImageElement | null>(null);
+
   useGSAP(() => {
     const tl = gsap.timeline();
-    tl.from(wordRef.current, {
+
+    tl.from(".word", {
       y: 100,
       opacity: 0,
-      duration: 1.5,
-      stagger: 0.2,
+      stagger: 0.15,
+      duration: 1,
       ease: "power3.out",
     });
 
-    tl.from(hero_imgRef.current, {
+    tl.from(heroImgRef.current, {
       y: 100,
       opacity: 0,
-      duration: 0.4,
-      ease: "sine.out",
+      duration: 0.6,
+      ease: "power3.out",
     });
   });
+
   return (
-    <div>
-      <div className="">
+    <section className="mt-14 flex min-h-screen max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
+      {/* Heading */}
+      <div>
         <h1
           ref={wordRef}
-          className="word text-5xl md:text-6xl font-bold tracking-tighter text-blue-400 mt-10 m-1"
+          className="word text-5xl font-bold tracking-tight text-blue-400 sm:text-6xl md:text-7xl lg:text-7xl"
         >
           FULLSTACK
         </h1>
-        <h1
-          ref={wordRef}
-          className="word text-5xl md:text-6xl font-bold tracking-tighter ml-4 relative bottom-2"
-        >
+
+        <h1 className="word ml-4 -mt-2 text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-7xl">
           DEVELOPER
         </h1>
       </div>
-      <div className="md:flex place-content-end pr-4">
-        <img ref={hero_imgRef} className="hero_img" src={hero_rifat} alt="" />
+
+      {/* Image */}
+      <div className="mt-8 flex justify-center md:justify-end">
+        <img
+          ref={heroImgRef}
+          src={hero_rifat}
+          alt="Reyan"
+          className="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl"
+        />
       </div>
-      <div className="mt-10 md:flex place-content-end pr-4">
-        <h1 className="wordTwo text-4xl md:text-5xl font-medium tracking-wider ml-4 relative bottom-2 text-secondary">
-          Hey There, I'm {""}
-          <span className="text-white">Reyan</span>
-        </h1>
+
+      {/* Subtitle */}
+      <div className="mt-8 text-center md:text-right">
+        <h2 className="text-2xl font-medium tracking-wide text-secondary sm:text-3xl md:text-4xl lg:text-5xl">
+          Hey There, I'm <span className="text-white">Reyan</span>
+        </h2>
       </div>
-      <div className="flex flex-row mt-10 place-content-center gap-x-10 p-4 pl-6">
+
+      {/* Buttons */}
+      <div className="mt-10 flex flex-wrap justify-center gap-4 md:justify-end">
         <button
-          onClick={() => {
-            lenis?.scrollTo("#contact");
-          }}
-          className="bg-white text-background p-3 text-lg font-semibold rounded-md hover:scale-105 md:text-2xl"
+          onClick={() => lenis?.scrollTo("#contact")}
+          className="rounded-lg bg-white px-6 py-3 text-lg font-semibold text-background transition hover:scale-105"
         >
-          contact
+          Contact
         </button>
-        <button className="bg-blue-400 text-white p-3 text-lg font-semibold rounded-md hover:scale-105 md:text-2xl">
-          <a
-            href={`${import.meta.env.VITE_RESUME_LINK}`}
-            target="_blank"
-            rel="noopener, noreferer"
-          >
-            resume
-          </a>
-        </button>
+
+        <a
+          href={import.meta.env.VITE_RESUME_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-lg bg-blue-500 px-6 py-3 text-lg font-semibold text-white transition hover:scale-105"
+        >
+          Resume
+        </a>
       </div>
-    </div>
+    </section>
   );
 };
 

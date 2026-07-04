@@ -1,5 +1,5 @@
-import { useNav } from "../../context/NavContext";
 import { useLenis } from "lenis/react";
+import { useNav } from "../../context/NavContext";
 
 const pages = [
   { id: 1, label: "HOME", section: "home" },
@@ -10,32 +10,50 @@ const pages = [
   { id: 6, label: "CONTACT", section: "contact" },
 ];
 
-const Menubar = () => {
+type MenubarProps = {
+  mobile?: boolean;
+};
+
+const Menubar = ({ mobile = false }: MenubarProps) => {
   const lenis = useLenis();
   const { setIsMenuOpen, activeSection, setActiveSection } = useNav();
 
-  return (
-    <div className="fixed z-40 w-full mt-10 m-2 p-6 bg-zinc-800 text-xl rounded-md tracking-wider md:relative md:inline-table text-justify">
-      {pages.map((page) => {
-        return (
-          <div
-            onClick={() => {
-              setActiveSection(page.section);
-              setIsMenuOpen(false);
+  const handleClick = (section: string) => {
+    setActiveSection(section);
 
-              if (page.section === "home") {
-                lenis?.scrollTo(0);
-              } else {
-                lenis?.scrollTo(`#${page.section}`);
-              }
-            }}
-            className={`p-4 hover:bg-zinc-900 rounded-xl font-medium hover:text-white ${activeSection === page.section ? "bg-zinc-900 text-white" : "text-secondary"}`}
-            key={page.id}
-          >
-            <button>{page.label}</button>
-          </div>
-        );
-      })}
+    if (mobile) {
+      setIsMenuOpen(false);
+    }
+
+    if (section === "home") {
+      lenis?.scrollTo(0);
+    } else {
+      lenis?.scrollTo(`#${section}`);
+    }
+  };
+
+  return (
+    <div
+      className={
+        mobile
+          ? "rounded-2xl bg-zinc-900 p-4 shadow-xl"
+          : "flex items-center gap-2"
+      }
+    >
+      {pages.map((page) => (
+        <button
+          key={page.id}
+          onClick={() => handleClick(page.section)}
+          className={`w-full rounded-xl px-4 py-3 text-left text-base font-medium tracking-wider transition-all duration-300 md:w-auto md:text-center md:text-base md:px-2
+            ${
+              activeSection === page.section
+                ? "bg-zinc-800 text-white"
+                : "text-secondary hover:bg-zinc-800 hover:text-white"
+            }`}
+        >
+          {page.label}
+        </button>
+      ))}
     </div>
   );
 };

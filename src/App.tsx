@@ -5,12 +5,9 @@ import Cursor from "./components/ui/Cursor";
 // import Loader from "./components/ui/Loader";
 import Home from "./pages/Home";
 import Navbar from "./components/nav/Navbar";
-import { useNav } from "./context/NavContext";
-import Menubar from "./components/nav/Menubar";
 
 const App = () => {
   // const [loading, setLoading] = useState(true);
-  const { isMenuOpen } = useNav();
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -33,7 +30,6 @@ const App = () => {
           <Cursor />
           <Navbar />
           <div className="pt-16">
-            {isMenuOpen && <Menubar />}
             <Routes>
               <Route path="/" element={<Home />} />
               {/* <Route path="/project/:id" element={<ProjectDetails />} /> */}

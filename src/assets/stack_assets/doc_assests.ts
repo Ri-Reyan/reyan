@@ -132,6 +132,25 @@ export const projects: IprojectType[] = [
   },
   {
     id: 3,
+    title: "DOGSTUDIO – Modern 3D Landing Page",
+    description:
+      "An immersive, scroll-driven 3D landing page built with React and Three.js. Features animated GLTF models, GSAP-powered storytelling, responsive layouts, and high-performance WebGL rendering to deliver a premium brand experience.",
+    techStack: [
+      "React",
+      "Vite",
+      "Three.js",
+      "@react-three/fiber",
+      "@react-three/drei",
+      "GSAP",
+      "ScrollTrigger",
+      "Tailwind CSS",
+    ],
+    link: "https://dog-studio-a-modern-3d-landing-web.vercel.app/",
+    github:
+      "https://github.com/Ri-Reyan/DOG_STUDIO----A-modern-3d-landing-web-page-using-three-JS",
+  },
+  {
+    id: 3,
     title: "Forever — Full-Stack MERN E-Commerce Platform",
     description:
       "A scalable MERN e-commerce platform featuring user and admin authentication, product management, secure backend APIs, image uploads, and a fast, responsive shopping experience designed with React and Tailwind CSS.",
