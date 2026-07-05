@@ -171,7 +171,7 @@ export const projects: IprojectType[] = [
       "Cloudinary",
       "Axios",
     ],
-    link: "https://e-commerce-forever-client-gamma.vercel.app",
+    link: "https://e-commerce-forever-client-gamma.vercel.app/",
     github: "https://github.com/Ri-Reyan/e-commerce-forever-client",
   },
 ];
