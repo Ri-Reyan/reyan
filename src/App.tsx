@@ -1,29 +1,29 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { StarsBackground } from "./components/ui/starrySpaceBg";
 import Cursor from "./components/ui/Cursor";
-// import Loader from "./components/ui/Loader";
+import Loader from "./components/ui/Loader";
 import Home from "./pages/Home";
 import Navbar from "./components/nav/Navbar";
 
 const App = () => {
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 3500);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3500);
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-  // if (loading) {
-  //   return <Loader />;
-  // }
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
-      {/* {loading && <Loader />} */}
+      {loading && <Loader />}
 
       <StarsBackground>
         <div className="text-tertiary min-h-screen">

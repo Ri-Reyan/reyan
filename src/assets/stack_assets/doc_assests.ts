@@ -49,6 +49,13 @@ type IprojectType = {
   github?: string;
 };
 
+type ICertificate = {
+  id?: number;
+  title: string;
+  link: string;
+  org?: string;
+};
+
 export const languages: technology[] = [
   { id: 1, name: "JavaScript", link: js_logo },
   { id: 2, name: "TypeScript", link: ts_logo },
@@ -166,5 +173,18 @@ export const projects: IprojectType[] = [
     ],
     link: "https://e-commerce-forever-client.vercel.app/",
     github: "https://github.com/Ri-Reyan/e-commerce-forever-client",
+  },
+];
+
+export const certificate: ICertificate[] = [
+  {
+    title: "JavaScript (Basic)",
+    link: "https://www.hackerrank.com/certificates/ebb3b9675e34",
+    org: "HackerRank Certification",
+  },
+  {
+    title: "SQL (Basic)",
+    link: "https://www.hackerrank.com/certificates/9da22005a4aa",
+    org: "HackerRank Certification",
   },
 ];
