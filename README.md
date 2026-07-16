@@ -1,76 +1,154 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. The site showcases a developer's introduction, skills, projects, certificates, and contact information through a polished single-page experience.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is designed to act as a personal brand landing page with:
 
-## React Compiler
+- A hero section with strong visual presentation
+- Smooth scrolling and animated transitions
+- A custom cursor experience and ambient background effects
+- Structured sections for about, projects, skills, certificates, and contact
+- Responsive navigation for a polished desktop and mobile experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- React 19 + TypeScript for a scalable component-based architecture
+- Vite for fast development and optimized builds
+- Tailwind CSS for utility-first styling
+- Motion and GSAP-based UI animation support
+- Lenis-powered smooth scrolling
+- Custom UI components such as cursor, loader, and starry background
+- Section-based page layout with dedicated components for content
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Frontend: React, TypeScript, Vite
+- Styling: Tailwind CSS
+- Animation: Motion, GSAP, Lenis
+- Icons: lucide-react
+- Routing: react-router-dom
+- Linting: ESLint
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+  App.tsx
+  main.tsx
+  pages/
+    Home.tsx
+  sections/
+    Hero.tsx
+    About.tsx
+    Skills.tsx
+    Projects.tsx
+    Certificate.tsx
+    Contact.tsx
+  components/
+    nav/
+    ui/
+  assets/
+    stack_assets/
+  context/
+    NavContext.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Make sure you have the following installed:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18 or newer
+- npm or pnpm
 
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <your-repository-url>
+cd portfolio
+npm install
 ```
-# reyan
+
+## Development
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in the terminal (usually http://localhost:5173).
+
+## Production Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Available Scripts
+
+- npm run dev: starts the Vite development server
+- npm run build: compiles TypeScript and builds the production bundle
+- npm run preview: serves the built app locally
+- npm run lint: runs ESLint checks
+
+## Customization Guide
+
+### Update personal content
+
+The main content for the portfolio lives in the section components under src/sections/.
+
+- Edit the hero message in src/sections/Hero.tsx
+- Update the about text in src/sections/About.tsx
+- Replace project cards in src/sections/Projects.tsx
+- Update certificates in src/sections/Certificate.tsx
+- Modify contact details in src/sections/Contact.tsx
+
+### Theme and visuals
+
+Visual styling is handled through Tailwind classes and UI components in src/components/ui/.
+
+You can adjust:
+
+- Colors and spacing in component class names
+- Background effects in the starry space UI component
+- Cursor and loader behavior in the UI folder
+
+### Navigation
+
+The page sections are wired in src/pages/Home.tsx and the navbar is managed by src/components/nav/.
+
+## Deployment
+
+This project can be deployed to platforms such as:
+
+- Vercel
+- Netlify
+- GitHub Pages
+
+For Vercel or Netlify, the build command is:
+
+```bash
+npm run build
+```
+
+and the output directory is:
+
+```text
+dist
+```
+
+## Notes
+
+This repository currently does not include a license file. If you plan to publish it publicly, consider adding an appropriate license.
