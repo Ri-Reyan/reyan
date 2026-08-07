@@ -83,7 +83,7 @@ export const backend: technology[] = [
   { id: 1, name: "Node js", link: node_logo },
   { id: 2, name: "Express js", link: express_logo },
   { id: 3, name: "REST APIs", link: rest_api_logo },
-  { id: 4, name: "Ecription", link: encription_logo },
+  { id: 4, name: "Encryption", link: encription_logo },
 ];
 
 export const database: technology[] = [
