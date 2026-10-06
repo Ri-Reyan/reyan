@@ -39,15 +39,16 @@ type technology = {
   link?: string;
 };
 
-type IprojectType = {
+export interface IprojectType {
   id: number;
   title: string;
   description: string;
   techStack: string[];
-  feauters?: string[];
-  link?: string;
-  github?: string;
-};
+  feauters: string[]; 
+  github: string;
+  link?: string,
+  github: string,
+}
 
 type ICertificate = {
   id?: number;
@@ -105,6 +106,8 @@ export const systems: technology[] = [
   { id: 7, name: "Docker", link: docker_logo },
 ];
 
+
+
 export const projects: IprojectType[] = [
   {
     id: 1,
@@ -112,7 +115,15 @@ export const projects: IprojectType[] = [
     description:
       "TeamSync is a full-stack collaboration platform for organizing work across workspaces, projects, sprints, and tasks. It combines a responsive web experience with a structured API, relational persistence, secure authentication, real-time task updates, invitations, billing, and AI-assisted project workflows.",
     techStack: [
-      "Next.js","TypeScript","Node.js","Express","PostgreSQL","Prisma","Redis","Pusher","Stripe"
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Pusher",
+      "Stripe",
     ],
     feauters: [
       "Create workspaces and manage members",
@@ -120,12 +131,11 @@ export const projects: IprojectType[] = [
       "Track tasks on a Kanban board",
       "Move tasks between statuses with drag and drop",
       "See task creation, updates, status changes, and deletions in real time",
-      "Generate AI project summaries and discuss project risks and next steps
-",
+      "Generate AI project summaries and discuss project risks and next steps",
       "Invite collaborators by email",
       "Manage authentication, verification, and password recovery",
-      "Connect billing and checkout workflows"
-      "Provide separate user and administrative capabilities"
+      "Connect billing and checkout workflows",
+      "Provide separate user and administrative capabilities",
     ],
     link: "https://teamsync-client-psi.vercel.app",
     github: "https://github.com/Ri-Reyan/teamsync",
@@ -160,7 +170,7 @@ export const projects: IprojectType[] = [
     link: "https://github.com/Ri-Reyan/GearUp_Client",
     github: "https://github.com/Ri-Reyan/GearUp_Client",
   },
- {
+  {
     id: 3,
     title: "Caelum — Full-Stack E-Commerce Platform",
     description:
