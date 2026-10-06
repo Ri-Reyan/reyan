@@ -45,9 +45,8 @@ export interface IprojectType {
   description: string;
   techStack: string[];
   feauters: string[]; 
+  link?: string;
   github: string;
-  link?: string,
-  github: string,
 }
 
 type ICertificate = {
@@ -101,12 +100,10 @@ export const systems: technology[] = [
   { id: 3, name: "Zod Validation" },
   { id: 4, name: "Git & GitHub", link: git_logo },
   { id: 5, name: "Linux", link: linux_logo },
-  { id: 5, name: "Vercel", link: vercel_logo },
-  { id: 6, name: "Render" },
-  { id: 7, name: "Docker", link: docker_logo },
+  { id: 6, name: "Vercel", link: vercel_logo },
+  { id: 7, name: "Render" },
+  { id: 8, name: "Docker", link: docker_logo },
 ];
-
-
 
 export const projects: IprojectType[] = [
   {
@@ -200,7 +197,6 @@ export const projects: IprojectType[] = [
     github: "https://github.com/Ri-Reyan/Caelum_client",
   },
 ];
-
 
 export const certificate: ICertificate[] = [
   {
