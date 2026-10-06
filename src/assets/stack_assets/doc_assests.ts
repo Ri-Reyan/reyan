@@ -108,32 +108,27 @@ export const systems: technology[] = [
 export const projects: IprojectType[] = [
   {
     id: 1,
-    title: "Caelum — Full-Stack E-Commerce Platform",
+    title: "TeamSync — Multi-Tenant Kanban SaaS",
     description:
-      "A production-ready, watch-focused e-commerce storefront built with Next.js App Router, Express.js, Prisma, and PostgreSQL. Features robust HttpOnly JWT authentication, Stripe payment processing, real-time pre-order tracking, and a dynamic admin management dashboard.",
+      "TeamSync is a full-stack collaboration platform for organizing work across workspaces, projects, sprints, and tasks. It combines a responsive web experience with a structured API, relational persistence, secure authentication, real-time task updates, invitations, billing, and AI-assisted project workflows.",
     techStack: [
-      "Next.js (App Router)",
-      "TypeScript",
-      "Tailwind CSS",
-      "Express.js",
-      "Prisma ORM",
-      "PostgreSQL",
-      "Stripe API",
-      "Zod",
-      "Argon2",
-      "Axios",
+      "Next.js","TypeScript","Node.js","Express","PostgreSQL","Prisma","Redis","Pusher","Stripe"
     ],
     feauters: [
-      "Modular Full-Stack Architecture using Next.js 13+ App Router and RESTful Express API",
-      "Dual-Token JWT Authentication with secure HttpOnly Cookies and Argon2 password hashing",
-      "Role-Based Access Control (RBAC) supporting separate Customer and Admin Dashboards",
-      "Dynamic Pre-Order Management with real-time order status tracking and estimated delivery dates",
-      "Secure payment processing integration via Stripe API",
-      "Type-safe API validation using Zod schemas and centralized error handling middleware",
-      "Optimized production setup with Vercel Rewrite Proxying to bypass cross-site cookie restrictions",
+      "Create workspaces and manage members",
+      "Organize work into projects and sprints",
+      "Track tasks on a Kanban board",
+      "Move tasks between statuses with drag and drop",
+      "See task creation, updates, status changes, and deletions in real time",
+      "Generate AI project summaries and discuss project risks and next steps
+",
+      "Invite collaborators by email",
+      "Manage authentication, verification, and password recovery",
+      "Connect billing and checkout workflows"
+      "Provide separate user and administrative capabilities"
     ],
-    link: "https://caelum-client-five.vercel.app",
-    github: "https://github.com/Ri-Reyan/Caelum_client",
+    link: "https://teamsync-client-psi.vercel.app",
+    github: "https://github.com/Ri-Reyan/teamsync",
   },
   {
     id: 2,
@@ -165,26 +160,37 @@ export const projects: IprojectType[] = [
     link: "https://github.com/Ri-Reyan/GearUp_Client",
     github: "https://github.com/Ri-Reyan/GearUp_Client",
   },
-  {
+ {
     id: 3,
-    title: "DOGSTUDIO – Modern 3D Landing Page",
+    title: "Caelum — Full-Stack E-Commerce Platform",
     description:
-      "An immersive, scroll-driven 3D landing page built with React and Three.js. Features animated GLTF models, GSAP-powered storytelling, responsive layouts, and high-performance WebGL rendering to deliver a premium brand experience.",
+      "A production-ready, watch-focused e-commerce storefront built with Next.js App Router, Express.js, Prisma, and PostgreSQL. Features robust HttpOnly JWT authentication, Stripe payment processing, real-time pre-order tracking, and a dynamic admin management dashboard.",
     techStack: [
-      "React",
-      "Vite",
-      "Three.js",
-      "@react-three/fiber",
-      "@react-three/drei",
-      "GSAP",
-      "ScrollTrigger",
+      "Next.js (App Router)",
+      "TypeScript",
       "Tailwind CSS",
+      "Express.js",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Stripe API",
+      "Zod",
+      "Argon2",
+      "Axios",
     ],
-    link: "https://dog-studio-a-modern-3d-landing-web.vercel.app/",
-    github:
-      "https://github.com/Ri-Reyan/DOG_STUDIO----A-modern-3d-landing-web-page-using-three-JS",
+    feauters: [
+      "Modular Full-Stack Architecture using Next.js 13+ App Router and RESTful Express API",
+      "Dual-Token JWT Authentication with secure HttpOnly Cookies and Argon2 password hashing",
+      "Role-Based Access Control (RBAC) supporting separate Customer and Admin Dashboards",
+      "Dynamic Pre-Order Management with real-time order status tracking and estimated delivery dates",
+      "Secure payment processing integration via Stripe API",
+      "Type-safe API validation using Zod schemas and centralized error handling middleware",
+      "Optimized production setup with Vercel Rewrite Proxying to bypass cross-site cookie restrictions",
+    ],
+    link: "https://caelum-client-five.vercel.app",
+    github: "https://github.com/Ri-Reyan/Caelum_client",
   },
 ];
+
 
 export const certificate: ICertificate[] = [
   {
